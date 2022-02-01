@@ -1,22 +1,23 @@
 package com.example.relaciones;
 
-import com.example.relaciones.models.Nota;
-import com.example.relaciones.models.Persona;
-import com.example.relaciones.persistences.NotaRepository;
-import com.example.relaciones.persistences.PersonaRepository;
+// import com.example.relaciones.models.Nota;
+// import com.example.relaciones.models.Persona;
+// import com.example.relaciones.persistences.NotaRepository;
+// import com.example.relaciones.persistences.PersonaRepository;
+// import org.springframework.context.annotation.Bean;
+// import org.springframework.boot.CommandLineRunner;
+// import org.slf4j.Logger;
+// import org.slf4j.LoggerFactory;
 
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 
 @SpringBootApplication
 public class RelacionesApplication {
 
-	private static final Logger log = LoggerFactory.getLogger(RelacionesApplication.class);
+	// private static final Logger log = LoggerFactory.getLogger(RelacionesApplication.class);
 
 	public static void main(String[] args) {
 		SpringApplication.run(RelacionesApplication.class, args);
