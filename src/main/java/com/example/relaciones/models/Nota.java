@@ -29,8 +29,8 @@ public class Nota implements Serializable {
 
     private String descripcion;
 
-    // @ManyToOne(fetch = FetchType.LAZY)
-    @ManyToOne(fetch = FetchType.EAGER) // no es correcto, solo fue para evitrame el manejo de session proxy en la prueba
+    // @ManyToOne(fetch = FetchType.EAGER) // no es correcto, solo fue para evitrame el manejo de session proxy en la prueba
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "persona_id") // no es necesario
     private Persona persona;
 
