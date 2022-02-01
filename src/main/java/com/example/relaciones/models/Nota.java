@@ -7,6 +7,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -21,23 +22,25 @@ import lombok.ToString;
 @ToString
 @Entity
 @Table(name = "notas")
-public class Notas implements Serializable {
+public class Nota implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String descripcion;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    // @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER) // no es correcto, solo fue para evitrame el manejo de session proxy en la prueba
+    @JoinColumn(name = "persona_id") // no es necesario
     private Persona persona;
 
     @Override
     public boolean equals(Object o) {
         if (this == o)
             return true;
-        if (!(o instanceof Notas))
+        if (!(o instanceof Nota))
             return false;
-        return id != null && id.equals(((Notas) o).getId());
+        return id != null && id.equals(((Nota) o).getId());
     }
 
     @Override
