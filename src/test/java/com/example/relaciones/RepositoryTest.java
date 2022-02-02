@@ -34,9 +34,9 @@ public class RepositoryTest {
     @Test
     // @Transactional(readOnly = true)
     public void database() throws Exception {
-        Persona persona1 = new Persona(null, "gabriel", "quiroz", "hombre", 45);
-        Persona persona2 = new Persona(null, "lulu", "quiroz", "mujer", 44);
-        Persona persona3 = new Persona(null, "elianid", "tolentino", "mujer", 40);
+        Persona persona1 = new Persona(null, "gabriel", "quiroz", "hombre", 45,null);
+        Persona persona2 = new Persona(null, "lulu", "quiroz", "mujer", 44,null);
+        Persona persona3 = new Persona(null, "elianid", "tolentino", "mujer", 40,null);
 
         // pr.save(new Persona(null, "gabriel", "quiroz", "hombre", 45));
         pr.save(persona1);

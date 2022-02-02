@@ -1,12 +1,14 @@
 package com.example.relaciones.models;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,4 +30,8 @@ public class Persona implements Serializable {
     private String apPaterno;
     private String sexo;
     private Integer edad;
+
+    @Transient
+    private List<Nota> notas;
+
 }
