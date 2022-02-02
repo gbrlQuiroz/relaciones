@@ -13,12 +13,10 @@ import javax.persistence.Transient;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @Entity
 @Table(name = "personas")
 public class Persona implements Serializable {
@@ -34,4 +32,14 @@ public class Persona implements Serializable {
     @Transient
     private List<Nota> notas;
 
+    @Override
+    public String toString(){
+        return "Persona{"+
+        "id="+id+
+        ", nombre="+nombre+
+        ", apPaterno="+apPaterno+
+        ", sexo="+sexo+
+        ", edad="+edad+
+        "}";
+    }
 }

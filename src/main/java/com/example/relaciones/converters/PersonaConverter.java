@@ -1,7 +1,7 @@
 package com.example.relaciones.converters;
 
-// import java.util.ArrayList;
-// import java.util.List;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.example.relaciones.models.Persona;
 import com.example.relaciones.models.Nota;
@@ -20,13 +20,45 @@ public class PersonaConverter {
         p.setEdad(pV.getEdad());
 
         if (pV.getNotas() != null && !pV.getNotas().isEmpty()) {
-            // List<Nota> notas = new ArrayList<>();
-            for (NotaView nV : pV.getNotas()) {
-                // notas.add(new Nota(null, nV.getDescripcion(), p));
-                p.getNotas().add(new Nota(null, nV.getDescripcion(), p));
-            }
+            List<Nota> notas = new ArrayList<>();
+            // for (NotaView nV : pV.getNotas()) {
+            //     notas.add(new Nota(null, nV.getDescripcion(), p));
+            //     // p.getNotas().add(new Nota(null, nV.getDescripcion(), p));
+            // }
+
+            pV.getNotas().forEach(dato -> {
+                notas.add(new Nota(null, dato.getDescripcion(), p));
+            });
+
+            p.setNotas(notas);
         }
 
         return p;
     }
+
+    public PersonaView toView(Persona p) {
+        PersonaView pV = new PersonaView();
+        pV.setId(p.getId());
+        pV.setNombre(p.getNombre());
+        pV.setApPaterno(p.getApPaterno());
+        pV.setSexo(p.getSexo());
+        pV.setEdad(p.getEdad());
+
+        if (p.getNotas() != null && !p.getNotas().isEmpty()) {
+            List<NotaView> notas = new ArrayList<>();
+            // for (Nota n : p.getNotas()) {
+            //     notas.add(new NotaView(n.getId(), n.getDescripcion()));
+            //     // pV.getNotas().add(new NotaView(n.getId(), n.getDescripcion()));
+            // }
+
+            p.getNotas().forEach(dato -> {
+                notas.add(new NotaView(dato.getId(), dato.getDescripcion()));
+            });
+
+            pV.setNotas(notas);
+        }
+        return pV;
+    }
+
+   
 }
