@@ -62,4 +62,23 @@ public class PersonaServiceImpl implements PersonaService {
         return personaConverter.toView(p);
     }
 
+    @Override
+    public PersonaView readDetail(long id) {
+
+        if (!personaRepository.existsById(id)) {
+            return null;
+        }
+
+        Persona p = personaRepository.getById(id);
+
+        List<Nota> notas = new ArrayList<>();
+        notaRepository.findByPersonaId(id).forEach(dato -> {
+            notas.add(dato);
+        });
+
+        p.setNotas(notas);
+
+        return personaConverter.toView(p);
+    }
+
 }
