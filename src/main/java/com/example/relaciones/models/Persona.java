@@ -32,14 +32,16 @@ public class Persona implements Serializable {
     @Transient
     private List<Nota> notas;
 
+    // el metodo de lombok hace una referencia circular ya que notas tiene un campo
+    // Persona
     @Override
-    public String toString(){
-        return "Persona{"+
-        "id="+id+
-        ", nombre="+nombre+
-        ", apPaterno="+apPaterno+
-        ", sexo="+sexo+
-        ", edad="+edad+
-        "}";
+    public String toString() {
+        return "Persona{" +
+                "id=" + id +
+                ", nombre=" + nombre +
+                ", apPaterno=" + apPaterno +
+                ", sexo=" + sexo +
+                ", edad=" + edad +
+                "}";
     }
 }

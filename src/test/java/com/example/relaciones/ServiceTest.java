@@ -2,7 +2,7 @@ package com.example.relaciones;
 
 import com.example.relaciones.converters.PersonaConverter;
 import com.example.relaciones.models.Persona;
-import com.example.relaciones.models.Nota;
+// import com.example.relaciones.models.Nota;
 import com.example.relaciones.persistences.NotaRepository;
 import com.example.relaciones.persistences.PersonaRepository;
 import com.example.relaciones.services.impl.PersonaServiceImpl;
@@ -18,11 +18,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.mockito.Mockito.when;
 
-import java.util.ArrayList;
-import java.util.List;
+// import java.util.ArrayList;
+// import java.util.List;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.doReturn;
+// import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
