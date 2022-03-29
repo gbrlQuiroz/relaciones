@@ -19,20 +19,6 @@ public class PersonaConverter {
         p.setSexo(pV.getSexo());
         p.setEdad(pV.getEdad());
 
-        if (pV.getNotas() != null && !pV.getNotas().isEmpty()) {
-            List<Nota> notas = new ArrayList<>();
-            // for (NotaView nV : pV.getNotas()) {
-            //     notas.add(new Nota(null, nV.getDescripcion(), p));
-            //     // p.getNotas().add(new Nota(null, nV.getDescripcion(), p));
-            // }
-
-            pV.getNotas().forEach(dato -> {
-                notas.add(new Nota(null, dato.getDescripcion(), p));
-            });
-
-            p.setNotas(notas);
-        }
-
         return p;
     }
 
@@ -47,8 +33,8 @@ public class PersonaConverter {
         if (p.getNotas() != null && !p.getNotas().isEmpty()) {
             List<NotaView> notas = new ArrayList<>();
             // for (Nota n : p.getNotas()) {
-            //     notas.add(new NotaView(n.getId(), n.getDescripcion()));
-            //     // pV.getNotas().add(new NotaView(n.getId(), n.getDescripcion()));
+            // notas.add(new NotaView(n.getId(), n.getDescripcion()));
+            // // pV.getNotas().add(new NotaView(n.getId(), n.getDescripcion()));
             // }
 
             p.getNotas().forEach(dato -> {
@@ -60,5 +46,4 @@ public class PersonaConverter {
         return pV;
     }
 
-   
 }

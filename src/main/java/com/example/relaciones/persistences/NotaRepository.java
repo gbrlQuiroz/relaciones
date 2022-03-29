@@ -17,4 +17,13 @@ public interface NotaRepository extends JpaRepository<Nota,Long> {
     @Query(value="SELECT nota.* FROM notas nota WHERE nota.persona_id = :personaId", nativeQuery = true)
     List<Nota> findByPersonaIdQuery(Long personaId);
 
+    void deleteByPersonaId(long personaId);
+
+    
+    @Query(value="SELECT nota.* FROM notas nota WHERE nota.id = :id", nativeQuery = true)
+    Nota obtenById(long id);
+
+
+    void deleteByPersonaIdIsNull();
+
 }

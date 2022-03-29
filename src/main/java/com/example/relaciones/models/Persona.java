@@ -1,6 +1,7 @@
 package com.example.relaciones.models;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -30,7 +31,16 @@ public class Persona implements Serializable {
     private Integer edad;
 
     @Transient
-    private List<Nota> notas;
+    private List<Nota> notas; // = new ArrayList<>();
+
+
+    // public void addNota(Nota nota) {
+    //     this.notas.add(nota);
+    // }
+
+    // public void removeNota(Nota nota) {
+    //     this.notas.remove(nota);
+    // }
 
     // el metodo de lombok hace una referencia circular ya que notas tiene un campo
     // Persona

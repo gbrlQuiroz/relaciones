@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.http.HttpStatus;
@@ -45,4 +46,10 @@ public class PersonaRest {
         return ResponseEntity.ok(resp);
     }
 
+    @PutMapping("{idPersona}")
+    public ResponseEntity<PersonaView> updatePersona(@RequestBody PersonaView personaView, @PathVariable long idPersona) {
+        
+        personaView.setId(idPersona);
+        return new ResponseEntity<PersonaView>(personaService.update(personaView), HttpStatus.OK);
+    }
 }
