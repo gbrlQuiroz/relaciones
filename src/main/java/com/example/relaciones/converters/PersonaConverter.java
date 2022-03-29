@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.relaciones.models.Persona;
-import com.example.relaciones.models.Nota;
+// import com.example.relaciones.models.Nota;
 import com.example.relaciones.views.NotaView;
 import com.example.relaciones.views.PersonaView;
 
